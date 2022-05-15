@@ -486,7 +486,7 @@ func FetcherHandler(w http.ResponseWriter, r *http.Request) {
 func RedirectToHTTPSHandler(w http.ResponseWriter, r *http.Request) {
 	dest := "https://" + r.Host + r.URL.String()
 	LogRequest(r, "Redirecting to "+dest)
-	http.Redirect(w, r, dest, http.StatusSeeOther)
+	http.Redirect(w, r, dest, http.StatusPermanentRedirect)
 }
 
 // RedirectToHTTPS Sets up a redirector to https on the given port.
